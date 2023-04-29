@@ -43,7 +43,7 @@ sudo add-apt-repository ppa:ondrej/php -y
 
 apt install apache2 zip unzip net-tools curl mariadb-server -y
 apt install php7.4 php7.4-mysql php7.4-xml php7.4-curl -y
-link=$(sudo curl -Ls "https://api.github.com/repos/HamedAp/Ssh-User-management/releases/latest" | grep '"browser_download_url":' | sed -E 's/.*"([^"]+)".*/\1/')
+link=$(sudo curl -Ls "https://api.github.com/repos/mory/Ssh-User-management/releases/latest" | grep '"browser_download_url":' | sed -E 's/.*"([^"]+)".*/\1/')
 sudo wget -O /var/www/html/update.zip $link
 sudo unzip -o /var/www/html/update.zip -d /var/www/html/ &
 wait
@@ -124,7 +124,7 @@ systemctl restart mariadb &
 wait
 systemctl enable mariadb &
 wait
-link=$(sudo curl -Ls "https://api.github.com/repos/HamedAp/Ssh-User-management/releases/latest" | grep '"browser_download_url":' | sed -E 's/.*"([^"]+)".*/\1/')
+link=$(sudo curl -Ls "https://api.github.com/repos/mory/Ssh-User-management/releases/latest" | grep '"browser_download_url":' | sed -E 's/.*"([^"]+)".*/\1/')
 sudo wget -O /var/www/html/update.zip $link
 sudo unzip -o /var/www/html/update.zip -d /var/www/html/ &
 wait
@@ -193,9 +193,9 @@ sudo phpenmod curl
 PHP_INI=$(php -i | grep /.+/php.ini -oE)
 sed -i 's/extension=intl/;extension=intl/' ${PHP_INI}
 fi
-bash <(curl -Ls https://raw.githubusercontent.com/HamedAp/ioncube-loader/main/install.sh --ipv4)
-bash <(curl -Ls https://raw.githubusercontent.com/HamedAp/Nethogs-Json/main/install.sh --ipv4)
-bash <(curl -Ls https://raw.githubusercontent.com/HamedAp/Ssh-User-management/main/ssh-calls.sh --ipv4)
+bash <(curl -Ls https://raw.githubusercontent.com/mory/ioncube-loader/main/install.sh --ipv4)
+bash <(curl -Ls https://raw.githubusercontent.com/mory/Nethogs-Json/main/install.sh --ipv4)
+bash <(curl -Ls https://raw.githubusercontent.com/mory/Ssh-User-management/main/ssh-calls.sh --ipv4)
 mysql -e "create database ShaHaN;" &
 wait
 mysql -e "CREATE USER '${adminusername}'@'localhost' IDENTIFIED BY '${adminpassword}';" &
