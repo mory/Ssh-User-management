@@ -226,7 +226,7 @@ crontab -l | grep -v 'p/killusers.sh'  | crontab  -
 * * * * * bash /var/www/html/p/killusers.sh >/dev/null 2>&1" ) | crontab - &
 wait
 sudo bash /var/www/html/p/ipv6.sh
-clear
+#clear
 printf "\nPanel Link : http://${ipv4}/p/index.php"
 printf "\nUserName : \e[31m${adminusername}\e[0m "
 printf "\nPassword : \e[31m${adminpassword}\e[0m "
